@@ -1,18 +1,13 @@
-import express from 'express'
+import express from "express";
+import { studentsController } from "../controllers/index.controllers";
+const route = express.Router();
 
-const route = express.Router()
+route.get("/", studentsController.getAllStudent);
 
-route.get('/',(req,res) => {
-    res.status(200).json('students')
-})
-route.get('/:id',(req,res) => {
-    const data = req.params.id
-    res.status(200).json({message: `Get student by ${data}`,data})
-})
-route.post('/insert',(req,res) => {
-    res.status(200).json('insert')
-})
-route.patch('/',(req,res) => {
-    res.status(200).json('patch(create new object if not exists ')
-})
-export default route
+route.get("/:id", studentsController.getStudentById);
+
+route.post("/insert", studentsController.insertStudent);
+
+route.patch("/", studentsController.updateStudent);
+
+export default route;
