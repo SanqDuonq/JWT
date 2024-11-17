@@ -22,20 +22,20 @@ const register = async ({
   address: string;
 }) => {
   console.log(
-    "register user with: name" +
+    "register user with: name:" +
       name +
-      "email" +
+      " email:" +
       email +
-      "password" +
+      " password:" +
       password +
-      "phone" +
+      " phone:" +
       phoneNumber +
-      "address" +
+      " address:" +
       address
   );
 };
 
 export default {
-    login,
-    register
-}
+  login,
+  register,
+};
