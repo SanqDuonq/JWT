@@ -14,4 +14,4 @@ const classSchema: Schema = new Schema({
     }
 })
 
-export default mongoose.model('Class',classSchema)
+export const Class = mongoose.model('Class',classSchema)

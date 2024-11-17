@@ -1,13 +1,13 @@
 import express from "express";
-import { studentsController } from "../controllers/index.controllers";
+import studentsControllers from "../controllers/students.controllers";
 const route = express.Router();
 
-route.get("/", studentsController.getAllStudent);
+route.get("/", studentsControllers.getAllStudent);
 
-route.get("/:id", studentsController.getStudentById);
+route.get("/:id", studentsControllers.getStudentById);
 
-route.post("/insert", studentsController.insertStudent);
+route.post("/insert", studentsControllers.insertStudent);
 
-route.patch("/", studentsController.updateStudent);
+route.patch("/", studentsControllers.updateStudent);
 
 export default route;

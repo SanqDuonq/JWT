@@ -1,10 +1,15 @@
 import mongoose, { Schema } from "mongoose";
 import isEmail from "validator/lib/isEmail";
 
-const userSchema:Schema = new Schema({
-    id: {
-        type: mongoose.Types.ObjectId
-    },
+interface IUser {
+    name: string,
+    email: string,
+    password: string,
+    phoneNumber: string,
+    address: string
+}
+
+const userSchema:Schema<IUser>= new Schema({
     name: {
         type: String,
         require: true,
@@ -35,4 +40,4 @@ const userSchema:Schema = new Schema({
     }
 })
 
-export default mongoose.model('User',userSchema)
+export const User = mongoose.model('User',userSchema)

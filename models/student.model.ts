@@ -47,4 +47,4 @@ const studentSchema: Schema = new Schema({
     }
 })
 
-export default mongoose.model('Student',studentSchema)
+export const Student = mongoose.model('Student',studentSchema)
