@@ -25,13 +25,30 @@ const login = async (req: Request, res: Response) => {
 
 const register = async (req: Request, res: Response) => {
   const { name, email, password, phoneNumber, address } = req.body;
-  await usersRepository.register({name,email,password,phoneNumber,address})
-  res.status(200).json({
-    message: "Register successful",
-  });
+  try {
+    const user = await usersRepository.register({
+      name,
+      email,
+      password,
+      phoneNumber,
+      address,
+    });
+    res.status(200).json({
+      message: "Register successful",
+      data: user
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Register fail",
+      error: error instanceof Error ? error.message : 'Unknown error'
+    })
+    console.log('Error',error)
+  }
 };
 
-const getDetailUser = async (req: Request, res: Response) => {};
+const getDetailUser = async (req: Request, res: Response) => {
+
+};
 
 export default {
   login,
