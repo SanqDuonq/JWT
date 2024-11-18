@@ -12,7 +12,7 @@ const login = async ({
   if (existUser) {
     const isMatch = await bcrypt.compare(password, existUser.password);
     if (isMatch) {
-      const accessToken = jwt.sign({data: existUser},process.env.JWT_SECRET as string,{expiresIn: '15s'})
+      const accessToken = jwt.sign({data: existUser},process.env.JWT_SECRET as string,{expiresIn: '2d'})
       return {
         ...existUser.toObject(),
         password: 'Not Shown',
