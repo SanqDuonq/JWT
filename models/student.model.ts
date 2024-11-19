@@ -22,9 +22,6 @@ const studentSchema: Schema = new Schema({
             message: 'Email is incorrect format'
         }
     },
-    languages: {
-        type: [String]
-    },
     gender: {
         type: String,
         require: true,

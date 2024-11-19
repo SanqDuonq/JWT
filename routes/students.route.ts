@@ -8,6 +8,8 @@ route.get("/:id", studentsControllers.getStudentById);
 
 route.post("/insert", studentsControllers.insertStudent);
 
-route.patch("/", studentsControllers.updateStudent);
+route.patch("/:id", studentsControllers.updateStudent);
+
+route.delete("/delete/:id", studentsControllers.deleteStudent);
 
 export default route;

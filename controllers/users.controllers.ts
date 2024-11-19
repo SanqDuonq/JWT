@@ -43,6 +43,7 @@ const register = async (req: Request, res: Response) => {
 
 const getDetailUser = async (req: Request, res: Response) => {};
 
+
 export default {
   login,
   register,
